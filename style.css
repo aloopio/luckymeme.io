@@ -1,0 +1,227 @@
+html,
+body {
+  background-color: #3eaafd;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: Roboto, sans-serif !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #3eaafd78;
+  margin-bottom: 30px;
+  z-index: 99;
+}
+
+header>div {
+  width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  max-width: 100%;
+  padding: 0 8px;
+  display: flex;
+}
+
+header>div ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+}
+
+header>div ul:first-child {
+  justify-content: flex-start;
+}
+
+header>div ul:last-child {
+  justify-content: flex-end;
+}
+
+header>div ul li {
+  font-size: 2rem;
+}
+
+header>div ul:first-child li{
+  margin-right: 15px;
+}
+
+header>div ul:last-child li{
+  margin-left: 15px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.banner {
+  text-align: center;
+  flex: 1;
+  margin-top: 50px;
+}
+
+.contract {
+  border-radius: 23px;
+  padding: 8px 10px;
+  border: 2px solid #000071;
+  background-color: #ffffff;
+  color: #000071;
+  width: 390px;
+  max-width: 100%;
+  font-size: 0.9rem;
+  margin: 30px auto;
+  position: relative;
+}
+
+.contract .tab {
+  position: absolute;
+  top: -23px;
+  left: 0;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.contract .tab span {
+  color: #ffffff;
+  background-color: transparent;
+  display: inline-block;
+  padding: 5px 10px 0;
+  font-size: 0.7rem;
+  padding-bottom: 4px;
+  border: 2px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+}
+
+.contract .tab span.active{
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  border-color: #000071;
+  background-color: #ffffff;
+  color: #000071;
+}
+
+.banner img {
+  max-height: 350px;
+  max-width: calc(100% - 60px);
+  margin: 20px auto 0;
+}
+
+.countdown {
+  margin: 43px auto 0;
+  position: relative;
+}
+
+.countdown > div:first-child{
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  height: 150px;
+  color: #000071 !important;
+  margin: 0 auto;
+}
+
+.countdown > .dialing{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: #40aafdb5;
+}
+
+.countdown .time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 15px 15px;
+}
+
+.countdown .time>div:first-child {
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.countdown .time>div:last-child {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+}
+
+.countdown .separator {
+  width: 30px;
+  text-align: center;
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 700;
+  padding-top: 5px;
+}
+
+.link {
+  flex: 1;
+}
+
+.link div {
+  text-align: center;
+  margin: 34px auto 0;
+}
+
+.link .des {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.link a {
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background-color: #000071;
+  border-style: none;
+  align-self: center;
+  font-size: 1rem;
+  padding: 27px 77px 28px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 50px;
+  margin-bottom: 50px;
+}
+
+.link a:hover {
+  color: #000071;
+  background-color: #ffffff;
+}
