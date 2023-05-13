@@ -24,6 +24,7 @@ a {
   width: 500px;
   margin: 0 auto;
   max-width: 100%;
+  padding: 0 10px;
 }
 
 header {
@@ -92,7 +93,7 @@ h1 {
   color: #000071;
   width: 390px;
   max-width: 100%;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin: 30px auto;
   position: relative;
 }
@@ -167,8 +168,16 @@ h1 {
   padding: 15px 15px;
 }
 
+.countdown .time:first-child{
+  padding-left: 0;
+}
+
+.countdown .time:last-child{
+  padding-right: 0;
+}
+
 .countdown .time>div:first-child {
-  font-size: 5rem;
+  font-size: 3.9rem;
   line-height: 1;
   font-weight: 700;
   margin-bottom: 10px;

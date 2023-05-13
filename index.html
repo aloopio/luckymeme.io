@@ -34,13 +34,15 @@
     </header>
     <h1>Mega Millions - LULU MEME (LULU)</h1>
     <div class="banner">
-      <div class="contract">
-        <div class="tab">
-          <span @click="tab = 'bsc'" :class="{active: tab == 'bsc'}">BSC</span>
-          <span @click="tab = 'eth'" :class="{active: tab == 'eth'}">ETH</span>
-          <span @click="tab = 'arb'" :class="{active: tab == 'arb'}">ARB</span>
+      <div class="container">
+        <div class="contract">
+          <div class="tab">
+            <span @click="tab = 'bsc'" :class="{active: tab == 'bsc'}">BSC</span>
+            <span @click="tab = 'eth'" :class="{active: tab == 'eth'}">ETH</span>
+            <span @click="tab = 'arb'" :class="{active: tab == 'arb'}">ARB</span>
+          </div>
+          <div>{{contract[tab]}}</div>
         </div>
-        <div>{{contract[tab]}}</div>
       </div>
       <img src="moon.png" />
     </div>
