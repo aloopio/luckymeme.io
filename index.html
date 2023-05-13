@@ -16,7 +16,7 @@
 <body>
   <div id="app" class="hidden">
     <header>
-      <div>
+      <div class="container">
         <ul>
           <li>
             <a href="https://t.me/LuckyMemeIO"><i class='bx bxl-telegram'></i></a>
@@ -30,7 +30,7 @@
         </ul>
       </div>
     </header>
-    <h1>LULU MEME (LULU)</h1>
+    <h1>Mega Millions - LULU MEME (LULU)</h1>
     <div class="banner">
       <div class="contract">
         <div class="tab">
@@ -66,8 +66,21 @@
       <div class="des"><span>Daily lottery results</span></div>
       <div>
         <a
-          href="https://pancakeswap.finance/swap?inputCurrency=0x8C5cDFD7F6aCEe315D7F5C2d7ed31cBBB62A81cd&outputCurrency=0x1d96Ea9293791E59EE2c9c83a190311c368Ff1E2">Buy
+          href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0x8C5cDFD7F6aCEe315D7F5C2d7ed31cBBB62A81cd">Buy
           LULU</a>
+      </div>
+    </div>
+
+    <div class="detail">
+      <div class="container">
+        <h3>Reward condition & content</h3>
+        <div class="content">
+          <div>Min holding balance: {{token.minHoldingBalance}} LULU</div>
+          <div>Min holders to take reward: {{token.minHolders}}</div>
+          <div>Tax buy: {{token.buyTax}}% (add to reward)</div>
+          <div>Tax sell: {{token.sellTax}}%</div>
+          <div>Tax received reward: {{token.receivedTax}}%</div>
+        </div>
       </div>
     </div>
   </div>

@@ -14,6 +14,13 @@ createApp({
         h: 0,
         m: 0,
         s: 0
+      },
+      token: {
+        minHoldingBalance: '10,000',
+        minHolders: 10,
+        buyTax: 5,
+        sellTax: 0,
+        receivedTax: 10
       }
     };
   },

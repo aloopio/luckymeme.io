@@ -20,6 +20,12 @@ a {
   display: none;
 }
 
+.container{
+  width: 500px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -32,10 +38,7 @@ header {
 }
 
 header>div {
-  width: 500px;
-  margin: 0 auto;
   height: 100%;
-  max-width: 100%;
   padding: 0 8px;
   display: flex;
 }
@@ -224,4 +227,22 @@ h1 {
 .link a:hover {
   color: #000071;
   background-color: #ffffff;
+}
+
+/* Detail */
+.detail{
+  padding: 20px 0 100px;
+  color: #000071;
+  background-color: #ffffff;
+}
+
+.detail h3 {
+  font-size: 1.875rem;
+  text-align: center;
+}
+
+.detail .content {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  line-height: 2rem;
 }
