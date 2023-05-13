@@ -11,6 +11,8 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/abi.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 </head>
 
 <body>
@@ -63,7 +65,10 @@
       <div v-if="isDuring" class="dialing">Prepare next period</div>
     </div>
     <div class="link">
-      <div class="des"><span>Daily lottery results</span></div>
+      <div class="des">
+        <span v-if="token.rewardBalance > 0">Countdown to get {{token.rewardBalance}} LULU</span>
+        <span v-else>Next period is comming, buy & hold now!</span>
+      </div>
       <div>
         <a
           href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059ff775485246999027b3197955&outputCurrency=0x8C5cDFD7F6aCEe315D7F5C2d7ed31cBBB62A81cd">Buy
@@ -75,16 +80,16 @@
       <div class="container">
         <h3>Reward condition & content</h3>
         <div class="content">
-          <div>Min holding balance: {{token.minHoldingBalance}} LULU</div>
-          <div>Min holders to take reward: {{token.minHolders}}</div>
-          <div>Tax buy: {{token.buyTax}}% (add to reward)</div>
+          <div>Min holding balance: {{token.rewardMinHoldingBalance}} LULU</div>
+          <div>Min holders to take reward: {{token.rewardMinHoldersToGenerate}}</div>
+          <div>Tax buy: {{token.rewardTax}}% (add to reward)</div>
           <div>Tax sell: {{token.sellTax}}%</div>
-          <div>Tax received reward: {{token.receivedTax}}%</div>
+          <div>Tax receive reward: {{token.rewardReceivedTax}}%</div>
+          <div>Total reward holders: {{token.totalRewardHolders}}</div>
         </div>
       </div>
     </div>
   </div>
   <script src="/index.js"></script>
 </body>
-
 </html>

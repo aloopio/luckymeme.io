@@ -16,11 +16,14 @@ createApp({
         s: 0
       },
       token: {
-        minHoldingBalance: '10,000',
-        minHolders: 10,
-        buyTax: 5,
+        decimals: 8,
+        rewardMinHoldingBalance: '10,000',
+        rewardMinHoldersToGenerate: 10,
+        rewardTax: 5,
         sellTax: 0,
-        receivedTax: 10
+        rewardReceivedTax: 10,
+        totalRewardHolders: 0,
+        rewardBalance: 0
       }
     };
   },
@@ -63,11 +66,46 @@ createApp({
       }
 
       this.calcTime(diff / 1000);
+    },
+
+    getTokenInfo(){
+      const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
+      const token = new web3.eth.Contract(contractABI, this.contract.bsc);
+      token.methods.decimals().call().then((data) => {
+        this.token.decimals = data;
+        
+        token.methods.rewardBalance().call().then((data) => {
+          data = data.toString();
+          data = data.slice(0, -1 * this.token.decimals);
+          this.token.rewardBalance = data ? data.replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0;
+        });
+
+        token.methods.rewardTax().call().then((data) => {
+          this.token.rewardTax = data;
+        });
+
+        token.methods.rewardMinHoldingBalance().call().then((data) => {
+          data = data.toString();
+          data = data.slice(0, -1 * this.token.decimals);
+          this.token.rewardMinHoldingBalance = data ? data.replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0;
+        });
+
+        token.methods.rewardMinHoldersToGenerate().call().then((data) => {
+          data = data.toString();
+          this.token.rewardMinHoldersToGenerate = data.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        });
+
+        token.methods.totalRewardHolders().call().then((data) => {
+          data = data.toString();
+          this.token.totalRewardHolders = data.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        });
+      });
     }
   },
 
   mounted() {
     this.$el.parentNode.classList.remove("hidden");
     this.setTime();
+    this.getTokenInfo();
   },
 }).mount("#app");
