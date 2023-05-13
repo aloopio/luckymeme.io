@@ -100,11 +100,11 @@ h1 {
 
 .contract .tab {
   position: absolute;
-  top: -23px;
+  top: -25px;
   left: 0;
   text-align: left;
   padding: 0 20px;
-  height: 23px;
+  height: 25px;
 }
 
 .contract .tab span {
@@ -126,6 +126,19 @@ h1 {
   border-color: #000071;
   background-color: #ffffff;
   color: #000071;
+  position: relative;
+}
+
+.contract .tab span.active:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  z-index: 5;
 }
 
 .banner img {
