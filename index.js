@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       contract: {
-        bsc: '0x8C5cDFD7F6aCEe315D7F5C2d7ed31cBBB62A81cd',
+        bsc: '0xBE200967a508eB8195C0B968466A0d404120955c',
         eth: 'Coming soon',
         arb: 'Coming soon',
       },
@@ -19,9 +19,9 @@ createApp({
         decimals: 8,
         rewardMinHoldingBalance: '10,000',
         rewardMinHoldersToGenerate: 10,
-        rewardTax: 5,
+        buyTax: 5,
         sellTax: 0,
-        rewardReceivedTax: 10,
+        rewardTax: 10,
         totalRewardHolders: 0,
         rewardBalance: 0
       }
@@ -80,6 +80,10 @@ createApp({
           this.token.rewardBalance = data ? data.replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0;
         });
 
+        token.methods.buyTax().call().then((data) => {
+          this.token.buyTax = data;
+        });
+
         token.methods.rewardTax().call().then((data) => {
           this.token.rewardTax = data;
         });
@@ -93,11 +97,6 @@ createApp({
         token.methods.rewardMinHoldersToGenerate().call().then((data) => {
           data = data.toString();
           this.token.rewardMinHoldersToGenerate = data.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        });
-
-        token.methods.totalRewardHolders().call().then((data) => {
-          data = data.toString();
-          this.token.totalRewardHolders = data.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         });
       });
     }
