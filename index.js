@@ -52,12 +52,12 @@ createApp({
     },
 
     setTime(){
-      let current = new Date().getTime();
       let xoso = new Date();
-      xoso.setHours(17);
-      xoso.setMinutes(0);
-      xoso.setSeconds(0);
-      xoso.setMilliseconds(0);
+      let current = xoso.getTime();
+      xoso.setUTCHours(0);
+      xoso.setUTCMinutes(0);
+      xoso.setUTCSeconds(0);
+      xoso.setUTCMilliseconds(0);
       let diff = xoso.getTime() - current;
 
       if (diff < 0 && (diff + 30 * 60000) < 0) {
