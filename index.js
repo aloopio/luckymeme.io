@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       contract: {
-        bsc: '0xBE200967a508eB8195C0B968466A0d404120955c',
+        bsc: 'Coming soon', // 0xBE200967a508eB8195C0B968466A0d404120955c
         eth: 'Coming soon',
         arb: 'Coming soon',
       },
@@ -30,7 +30,8 @@ createApp({
 
   methods: {
     calcTime(diff){
-      if (diff <= 0) {
+      // diff <= 0
+      if (true) {
         this.isDuring = true;
         this.time.h = '00';
         this.time.m = '00';
